@@ -69,6 +69,7 @@
             this.showDevicePropertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabData = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.enableSystemProperties = new System.Windows.Forms.CheckBox();
             this.consumerGroupCheckBox = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupNameTextBox = new System.Windows.Forms.TextBox();
@@ -120,7 +121,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.ehStringToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.enableSystemProperties = new System.Windows.Forms.CheckBox();
             this.tabCallDeviceMethod.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -605,6 +605,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Monitoring";
             // 
+            // enableSystemProperties
+            // 
+            this.enableSystemProperties.AutoSize = true;
+            this.enableSystemProperties.Location = new System.Drawing.Point(563, 208);
+            this.enableSystemProperties.Name = "enableSystemProperties";
+            this.enableSystemProperties.Size = new System.Drawing.Size(170, 20);
+            this.enableSystemProperties.TabIndex = 30;
+            this.enableSystemProperties.Text = "Show system properties";
+            this.enableSystemProperties.UseVisualStyleBackColor = true;
+            // 
             // consumerGroupCheckBox
             // 
             this.consumerGroupCheckBox.AutoSize = true;
@@ -704,7 +714,7 @@
             // 
             this.deviceIDsComboBoxForEvent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.deviceIDsComboBoxForEvent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.deviceIDsComboBoxForEvent.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.deviceIDsComboBoxForEvent.FormattingEnabled = true;
             this.deviceIDsComboBoxForEvent.Location = new System.Drawing.Point(101, 73);
             this.deviceIDsComboBoxForEvent.Name = "deviceIDsComboBoxForEvent";
@@ -848,7 +858,7 @@
             // 
             this.deviceIDsComboBoxForCloudToDeviceMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.deviceIDsComboBoxForCloudToDeviceMessage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.deviceIDsComboBoxForCloudToDeviceMessage.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.deviceIDsComboBoxForCloudToDeviceMessage.FormattingEnabled = true;
             this.deviceIDsComboBoxForCloudToDeviceMessage.Location = new System.Drawing.Point(104, 81);
             this.deviceIDsComboBoxForCloudToDeviceMessage.Name = "deviceIDsComboBoxForCloudToDeviceMessage";
@@ -1074,7 +1084,7 @@
             // 
             this.deviceIDsComboBoxForDeviceMethod.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.deviceIDsComboBoxForDeviceMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.deviceIDsComboBoxForDeviceMethod.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.deviceIDsComboBoxForDeviceMethod.FormattingEnabled = true;
             this.deviceIDsComboBoxForDeviceMethod.Location = new System.Drawing.Point(140, 81);
             this.deviceIDsComboBoxForDeviceMethod.Name = "deviceIDsComboBoxForDeviceMethod";
@@ -1157,16 +1167,6 @@
             this.label13.Size = new System.Drawing.Size(143, 16);
             this.label13.TabIndex = 0;
             this.label13.Text = "Call Method on Device";
-            // 
-            // enableSystemProperties
-            // 
-            this.enableSystemProperties.AutoSize = true;
-            this.enableSystemProperties.Location = new System.Drawing.Point(563, 208);
-            this.enableSystemProperties.Name = "enableSystemProperties";
-            this.enableSystemProperties.Size = new System.Drawing.Size(170, 20);
-            this.enableSystemProperties.TabIndex = 30;
-            this.enableSystemProperties.Text = "Show system properties";
-            this.enableSystemProperties.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 

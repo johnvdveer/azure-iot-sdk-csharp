@@ -417,7 +417,7 @@ namespace DeviceExplorer
 
             try
             {
-                string selectedDevice = deviceIDsComboBoxForEvent.SelectedItem.ToString();
+                string selectedDevice = deviceIDsComboBoxForEvent.Text;
                 eventHubClient = EventHubClient.CreateFromConnectionString(activeIoTHubConnectionString, "messages/events");
                 eventHubTextBox.Text = "Receiving events...\r\n";
                 eventHubPartitionsCount = eventHubClient.GetRuntimeInformation().PartitionCount;
@@ -657,9 +657,9 @@ namespace DeviceExplorer
                     serviceMessage.Properties.Add(row.Cells[0].Value?.ToString() ?? string.Empty, row.Cells[1].Value?.ToString() ?? string.Empty);
                 }
 
-                await serviceClient.SendAsync(deviceIDsComboBoxForCloudToDeviceMessage.SelectedItem.ToString(), serviceMessage);
+                await serviceClient.SendAsync(deviceIDsComboBoxForCloudToDeviceMessage.Text, serviceMessage);
 
-                messagesTextBox.Text += $"Sent to Device ID: [{deviceIDsComboBoxForCloudToDeviceMessage.SelectedItem.ToString()}], Message:\"{cloudToDeviceMessage}\", message Id: {serviceMessage.MessageId}\n";
+                messagesTextBox.Text += $"Sent to Device ID: [{deviceIDsComboBoxForCloudToDeviceMessage.Text}], Message:\"{cloudToDeviceMessage}\", message Id: {serviceMessage.MessageId}\n";
 
                 await serviceClient.CloseAsync();
 
@@ -696,7 +696,7 @@ namespace DeviceExplorer
             returnStatusTextBox.Text = "";
             returnPayloadTextBox.Text = "";
 
-            string deviceId = deviceIDsComboBoxForDeviceMethod.SelectedItem.ToString();
+            string deviceId = deviceIDsComboBoxForDeviceMethod.Text;
 
             string methodName = methodNameTextBox.Text;
             string payload = methodPayloadTextBox.Text;
@@ -884,9 +884,9 @@ namespace DeviceExplorer
 
             ctsForFeedbackMonitoring = new CancellationTokenSource();
 
-            messagesTextBox.Text += $"Started monitoring feedback for device {deviceIDsComboBoxForCloudToDeviceMessage.SelectedItem.ToString()}.\r\n";
+            messagesTextBox.Text += $"Started monitoring feedback for device {deviceIDsComboBoxForCloudToDeviceMessage.Text}.\r\n";
 
-            await MonitorFeedback(ctsForFeedbackMonitoring.Token, deviceIDsComboBoxForCloudToDeviceMessage.SelectedItem.ToString());
+            await MonitorFeedback(ctsForFeedbackMonitoring.Token, deviceIDsComboBoxForCloudToDeviceMessage.Text);
         }
 
         void StopMonitoringFeedback()
