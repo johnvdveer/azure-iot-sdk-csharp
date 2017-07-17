@@ -659,7 +659,7 @@ namespace DeviceExplorer
 
                 await serviceClient.SendAsync(deviceIDsComboBoxForCloudToDeviceMessage.Text, serviceMessage);
 
-                messagesTextBox.Text += $"Sent to Device ID: [{deviceIDsComboBoxForCloudToDeviceMessage.Text}], Message:\"{cloudToDeviceMessage}\", message Id: {serviceMessage.MessageId}\n";
+                messagesTextBox.Text += $"{DateTime.Now.ToString("yyyy-MMM-dd HH:mm:ss.fff")} Sent to Device ID: [{deviceIDsComboBoxForCloudToDeviceMessage.Text}], Message:\"{cloudToDeviceMessage}\", message Id: {serviceMessage.MessageId}\n";
 
                 await serviceClient.CloseAsync();
 
