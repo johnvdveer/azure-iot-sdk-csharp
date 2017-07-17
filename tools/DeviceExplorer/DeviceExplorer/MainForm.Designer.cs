@@ -80,7 +80,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.eventHubNameTextBoxForDataTab = new System.Windows.Forms.TextBox();
-            this.deviceIDsComboBoxForEvent = new System.Windows.Forms.ComboBox();
+            this.deviceIDsComboBoxForEvent = new System.Windows.Forms.TextBox();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.eventHubTextBox = new System.Windows.Forms.RichTextBox();
@@ -91,7 +91,7 @@
             this.ValueColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkBoxMonitorFeedbackEndpoint = new System.Windows.Forms.CheckBox();
             this.messageClearButton = new System.Windows.Forms.Button();
-            this.deviceIDsComboBoxForCloudToDeviceMessage = new System.Windows.Forms.ComboBox();
+            this.deviceIDsComboBoxForCloudToDeviceMessage = new System.Windows.Forms.TextBox();
             this.iotHubNameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -715,12 +715,12 @@
             this.deviceIDsComboBoxForEvent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.deviceIDsComboBoxForEvent.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.deviceIDsComboBoxForEvent.FormattingEnabled = true;
+            //this.deviceIDsComboBoxForEvent.FormattingEnabled = true;
             this.deviceIDsComboBoxForEvent.Location = new System.Drawing.Point(101, 73);
             this.deviceIDsComboBoxForEvent.Name = "deviceIDsComboBoxForEvent";
             this.deviceIDsComboBoxForEvent.Size = new System.Drawing.Size(622, 24);
             this.deviceIDsComboBoxForEvent.TabIndex = 18;
-            this.deviceIDsComboBoxForEvent.SelectionChangeCommitted += new System.EventHandler(this.deviceIDsComboBoxForEvent_SelectionChangeCommitted);
+           // this.deviceIDsComboBoxForEvent.SelectionChangeCommitted += new System.EventHandler(this.deviceIDsComboBoxForEvent_SelectionChangeCommitted);
             // 
             // dateTimePicker
             // 
@@ -859,12 +859,12 @@
             this.deviceIDsComboBoxForCloudToDeviceMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.deviceIDsComboBoxForCloudToDeviceMessage.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.deviceIDsComboBoxForCloudToDeviceMessage.FormattingEnabled = true;
+            //this.deviceIDsComboBoxForCloudToDeviceMessage.FormattingEnabled = true;
             this.deviceIDsComboBoxForCloudToDeviceMessage.Location = new System.Drawing.Point(104, 81);
             this.deviceIDsComboBoxForCloudToDeviceMessage.Name = "deviceIDsComboBoxForCloudToDeviceMessage";
             this.deviceIDsComboBoxForCloudToDeviceMessage.Size = new System.Drawing.Size(630, 24);
             this.deviceIDsComboBoxForCloudToDeviceMessage.TabIndex = 10;
-            this.deviceIDsComboBoxForCloudToDeviceMessage.SelectionChangeCommitted += new System.EventHandler(this.deviceIDsComboBoxForMessage_SelectionChangeCommitted);
+            //this.deviceIDsComboBoxForCloudToDeviceMessage.SelectionChangeCommitted += new System.EventHandler(this.deviceIDsComboBoxForMessage_SelectionChangeCommitted);
             // 
             // iotHubNameTextBox
             // 
@@ -1250,8 +1250,8 @@
         private System.Windows.Forms.TextBox eventHubNameTextBoxForDataTab;
         private System.Windows.Forms.TextBox iotHubNameTextBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox deviceIDsComboBoxForEvent;
-        private System.Windows.Forms.ComboBox deviceIDsComboBoxForCloudToDeviceMessage;
+        private System.Windows.Forms.TextBox deviceIDsComboBoxForEvent;
+        private System.Windows.Forms.TextBox deviceIDsComboBoxForCloudToDeviceMessage;
         private System.Windows.Forms.Button clearDataButton;
         private System.Windows.Forms.DataGridView devicesGridView;
         private System.Windows.Forms.Button messageClearButton;

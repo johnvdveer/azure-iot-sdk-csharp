@@ -155,12 +155,12 @@ namespace DeviceExplorer
                     deviceIdsForDeviceMethod.Add(device.Id);
                 }
                 await registryManager.CloseAsync();
-                deviceIDsComboBoxForEvent.DataSource = deviceIdsForEvent.OrderBy(c => c).ToList();
-                deviceIDsComboBoxForCloudToDeviceMessage.DataSource = deviceIdsForC2DMessage.OrderBy(c => c).ToList();
+                //deviceIDsComboBoxForEvent.DataSource = deviceIdsForEvent.OrderBy(c => c).ToList();
+                //deviceIDsComboBoxForCloudToDeviceMessage.DataSource = deviceIdsForC2DMessage.OrderBy(c => c).ToList();
                 deviceIDsComboBoxForDeviceMethod.DataSource = deviceIdsForDeviceMethod.OrderBy(c => c).ToList();
 
-                deviceIDsComboBoxForEvent.SelectedIndex = deviceSelectedIndexForEvent;
-                deviceIDsComboBoxForCloudToDeviceMessage.SelectedIndex = deviceSelectedIndexForC2DMessage;
+                //deviceIDsComboBoxForEvent.SelectedIndex = deviceSelectedIndexForEvent;
+                //deviceIDsComboBoxForCloudToDeviceMessage.SelectedIndex = deviceSelectedIndexForC2DMessage;
                 deviceIDsComboBoxForDeviceMethod.SelectedIndex = deviceSelectedIndexForDeviceMethod;
             }
         }
