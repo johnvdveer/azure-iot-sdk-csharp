@@ -30,13 +30,11 @@ namespace DeviceExplorer
         private string messageDeviceTwinFunctionalityNotFound = "Device Twin functionality not found." + Environment.NewLine + "Make sure you are using the latest Microsoft.Azure.Devices package.";
         private string connString;
         private string deviceName;
-
         public DeviceTwinAndMethod(string connectionString, string deviceId)
         {
             connString = connectionString;
             deviceName = deviceId;
         }
-
         public async Task<DeviceTwinData> GetDeviceTwinData()
         {
             DeviceTwinData result = new DeviceTwinData();

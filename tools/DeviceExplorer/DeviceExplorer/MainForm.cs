@@ -517,7 +517,9 @@ namespace DeviceExplorer
                         {
                             eventHubTextBox.SelectionStart = eventHubTextBox.Text.Length - 1;
                         }
-                        eventHubTextBox.SelectionLength = 0;
+                        eventHubTextBox.SelectionLength = 0;  
+                        //loggggg
+           
                         eventHubTextBox.ScrollToCaret();
                     }
                 }
@@ -552,6 +554,7 @@ namespace DeviceExplorer
 
         private void dataMonitorButton_Click(object sender, EventArgs e)
         {
+            Console.Write("plopperdeplop");
             dataMonitorButton.Enabled = false;
             deviceIDsComboBoxForEvent.Enabled = false;
             cancelMonitoringButton.Enabled = true;

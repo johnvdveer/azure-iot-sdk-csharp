@@ -105,6 +105,7 @@ namespace DeviceExplorer
         private async void refreshBtn_Click(object sender, EventArgs e)
         {
             await UpdateDialogData();
+            Console.WriteLine("tada");
         }
 
         private async void sendBtn_Click(object sender, EventArgs e)
