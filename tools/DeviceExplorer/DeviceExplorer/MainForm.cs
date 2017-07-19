@@ -554,7 +554,7 @@ namespace DeviceExplorer
 
         private void dataMonitorButton_Click(object sender, EventArgs e)
         {
-            Console.Write("plopperdeplop");
+          
             dataMonitorButton.Enabled = false;
             deviceIDsComboBoxForEvent.Enabled = false;
             cancelMonitoringButton.Enabled = true;
