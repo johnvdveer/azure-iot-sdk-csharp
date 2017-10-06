@@ -715,12 +715,10 @@
             this.deviceIDsComboBoxForEvent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.deviceIDsComboBoxForEvent.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            //this.deviceIDsComboBoxForEvent.FormattingEnabled = true;
             this.deviceIDsComboBoxForEvent.Location = new System.Drawing.Point(101, 73);
             this.deviceIDsComboBoxForEvent.Name = "deviceIDsComboBoxForEvent";
-            this.deviceIDsComboBoxForEvent.Size = new System.Drawing.Size(622, 24);
+            this.deviceIDsComboBoxForEvent.Size = new System.Drawing.Size(622, 22);
             this.deviceIDsComboBoxForEvent.TabIndex = 18;
-           // this.deviceIDsComboBoxForEvent.SelectionChangeCommitted += new System.EventHandler(this.deviceIDsComboBoxForEvent_SelectionChangeCommitted);
             // 
             // dateTimePicker
             // 
@@ -859,12 +857,10 @@
             this.deviceIDsComboBoxForCloudToDeviceMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.deviceIDsComboBoxForCloudToDeviceMessage.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            //this.deviceIDsComboBoxForCloudToDeviceMessage.FormattingEnabled = true;
             this.deviceIDsComboBoxForCloudToDeviceMessage.Location = new System.Drawing.Point(104, 81);
             this.deviceIDsComboBoxForCloudToDeviceMessage.Name = "deviceIDsComboBoxForCloudToDeviceMessage";
-            this.deviceIDsComboBoxForCloudToDeviceMessage.Size = new System.Drawing.Size(630, 24);
+            this.deviceIDsComboBoxForCloudToDeviceMessage.Size = new System.Drawing.Size(630, 22);
             this.deviceIDsComboBoxForCloudToDeviceMessage.TabIndex = 10;
-            //this.deviceIDsComboBoxForCloudToDeviceMessage.SelectionChangeCommitted += new System.EventHandler(this.deviceIDsComboBoxForMessage_SelectionChangeCommitted);
             // 
             // iotHubNameTextBox
             // 

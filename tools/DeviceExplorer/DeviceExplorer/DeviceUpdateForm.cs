@@ -20,58 +20,41 @@ namespace DeviceExplorer
             InitializeComponent();
             this.registryManager = manager;
             this.devicesMaxCount = maxDevices;
-            this.selectedDeviceID = deviceID;
+            this.deviceIDComboBox.Text = deviceID;
             updateControls(deviceID);
         }
 
         private async void updateControls(string selectedDevice)
         {
-            List<string> deviceIds = new List<string>();
             try
             {
-                var devices = await registryManager.GetDevicesAsync(devicesMaxCount);
-                foreach (var device in devices)
-                {
-                    deviceIds.Add(device.Id);
-                }
-                this.deviceIDComboBox.DataSource = deviceIds.OrderBy(c => c).ToList();
+                var _device = await registryManager.GetDeviceAsync(selectedDevice);
 
-                // To capture the deviceId highlighted in the DataGridView
-                foreach(var item in this.deviceIDComboBox.Items)
+                if (_device != null)
                 {
-                    if (item.ToString() == selectedDevice)
+                    txtConnectionStatus.Text = _device.ConnectionState.ToString();
+                    txtLastActivity.Text = _device.LastActivityTime.ToString();
+                    txtLastConnection.Text = _device.ConnectionStateUpdatedTime.ToString();
+                    if ((_device.Authentication.SymmetricKey != null) &&
+                        !((_device.Authentication.SymmetricKey.PrimaryKey == null) ||
+                           (_device.Authentication.SymmetricKey.SecondaryKey == null)))
                     {
-                        deviceIDComboBox.SelectedItem = item;
-                        break;
+                        primaryLabel.Text = "Primary Key:";
+                        secondaryLabel.Text = "Secondary Key:";
+                        primaryKeyTextBox.Text = _device.Authentication.SymmetricKey.PrimaryKey;
+                        secondaryKeyTextBox.Text = _device.Authentication.SymmetricKey.SecondaryKey;
                     }
-                }
-
-                foreach(var device in devices)
-                {
-                    if(device.Id == selectedDevice)
+                    else if (_device.Authentication.X509Thumbprint != null)
                     {
-                        if ( (device.Authentication.SymmetricKey != null) && 
-                            ! ((device.Authentication.SymmetricKey.PrimaryKey == null) ||
-                               (device.Authentication.SymmetricKey.SecondaryKey == null)) )
-                        {
-                            primaryLabel.Text = "Primary Key:";
-                            secondaryLabel.Text = "Secondary Key:";
-                            primaryKeyTextBox.Text = device.Authentication.SymmetricKey.PrimaryKey;
-                            secondaryKeyTextBox.Text = device.Authentication.SymmetricKey.SecondaryKey;
-                        }
-                        else if (device.Authentication.X509Thumbprint != null)
-                        {
-                            primaryLabel.Text = "Primary Thumbprint:";
-                            secondaryLabel.Text = "Secondary Thumbprint:";
-                            primaryKeyTextBox.Text = device.Authentication.X509Thumbprint.PrimaryThumbprint;
-                            secondaryKeyTextBox.Text = device.Authentication.X509Thumbprint.SecondaryThumbprint;
-                        }
-
-                        lastValidPrimaryKey = primaryKeyTextBox.Text;
-                        lastValidSecondaryKey = secondaryKeyTextBox.Text;
-                        break;
+                        primaryLabel.Text = "Primary Thumbprint:";
+                        secondaryLabel.Text = "Secondary Thumbprint:";
+                        primaryKeyTextBox.Text = _device.Authentication.X509Thumbprint.PrimaryThumbprint;
+                        secondaryKeyTextBox.Text = _device.Authentication.X509Thumbprint.SecondaryThumbprint;
                     }
-                }
+
+                    lastValidPrimaryKey = primaryKeyTextBox.Text;
+                    lastValidSecondaryKey = secondaryKeyTextBox.Text;
+                }      
             }
             catch (Exception ex)
             {
@@ -86,16 +69,8 @@ namespace DeviceExplorer
         {
             try
             {
-                var devices = await registryManager.GetDevicesAsync(devicesMaxCount);
-                Device updatedDevice = null;
-                foreach (var device in devices)
-                {
-                    if (device.Id == selectedDeviceID)
-                    {
-                        updatedDevice = device;
-                        break;
-                    }
-                }
+             
+                var updatedDevice = await registryManager.GetDeviceAsync(this.deviceIDComboBox.Text);
 
                 if (updatedDevice != null)
                 {
@@ -143,10 +118,7 @@ namespace DeviceExplorer
             this.Close();
         }
 
-        private void deviceIDComboBox_DropDownClosed(object sender, EventArgs e)
-        {
-            updateControls(this.deviceIDComboBox.SelectedItem.ToString());
-        }
+       
 
         private void restoreButton_Click(object sender, EventArgs e)
         {
@@ -158,5 +130,14 @@ namespace DeviceExplorer
         {
             await registryManager.CloseAsync();
         }
+
+       
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            updateControls(this.deviceIDComboBox.Text);
+        }
+
+    
     }
 }

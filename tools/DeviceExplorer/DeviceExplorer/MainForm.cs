@@ -962,5 +962,6 @@ namespace DeviceExplorer
         {
             showDevicePropertiesToolStripMenuItem_Click(this, null);
         }
+
     }
 }
