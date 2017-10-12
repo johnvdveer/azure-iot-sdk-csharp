@@ -649,7 +649,7 @@ namespace DeviceExplorer
 
                 var serviceMessage = new Microsoft.Azure.Devices.Message(Encoding.ASCII.GetBytes(cloudToDeviceMessage));
                 serviceMessage.Ack = DeliveryAcknowledgement.Full;
-                serviceMessage.MessageId = Guid.NewGuid().ToString();
+                serviceMessage.MessageId = $"{deviceIDsComboBoxForCloudToDeviceMessage.Text};{ DateTimeOffset.UtcNow.ToUnixTimeMilliseconds()};";
 
                 for (var i = 0; i < messagePropertiesGrid.Rows.Count - 1; i++)
                 {
